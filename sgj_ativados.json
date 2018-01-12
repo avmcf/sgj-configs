@@ -1,0 +1,15 @@
+{
+	"name" : "Analise de Editais - v-1.1 22/11/17 Mudança de nome de pasta",
+	"nodes" :
+    [
+        {
+            "id":"5",
+            "name" : "Publicações Válidas",
+            "description" : "Pasta de publicações válidadas por data de edição",
+            "search" : {
+                            "language" : "fts-alfresco",
+                            "query" : "(+TYPE:'sgj:edital' AND =sgj:traEditalAtivo:'true' AND =sgj:edtEdicao:'<sgj:atvEdicao>') "
+                    }
+        }
+    ]
+}

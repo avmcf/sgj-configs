@@ -1,0 +1,31 @@
+{
+	"name" : " teste Processamento de Editais - v-2.3 20/06/17 - query separando por tribunal",
+	"nodes" :
+        [
+            {
+                "id":"1",
+                "name" : "Carregamento",
+                "description" : "Movimento diário de publicações",
+                "search" : {
+                    "language" : "fts-alfresco",
+                    "query" :"+TYPE:'sgj:edital' AND =sgj:edtEdicao:'<sgj:edcEdicao>' AND =sgj:traEditalAtivo:'false' AND TEXT:'<sgj:edcTribunal>'"
+                },
+                "filing" : {
+                    "path" : "%ACTUAL_PATH%",
+                    "classification" : {
+                        "type" : "sgj:edital",
+                        "aspects" : ["sgj:tramitavel"
+                                ]
+                        },
+                    "properties" : {
+                        "sgj:edtTribunal" : "<sgj:edcTribunal>",
+                        "sgj:edtEdicao" : "<sgj:edcEdicao>",
+                        "cm:author" : "clippingDO",
+                        "cm:owner" : "clippingDO",
+                        "cm:creator" : "clippingDO"
+                        }
+                }
+            }
+
+        ]
+}
